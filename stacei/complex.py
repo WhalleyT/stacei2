@@ -9,8 +9,9 @@ from .anarci_functions import Anarci
 from .data.data import pdb_ranges
 from .chain_pairing import Pairing
 from .contacts import Contacts
+from .buried_surface import BuriedSurface
 
-class TCRpMHCComplex(PDBFile, Anarci, Pairing, Contacts):
+class TCRpMHCComplex(PDBFile, Anarci, Pairing, Contacts, BuriedSurface):
     """
     Object for defining and describing a TCR pMHC complex
     """
@@ -169,6 +170,8 @@ class TCRpMHCComplex(PDBFile, Anarci, Pairing, Contacts):
         self.contacts = self.calculate_contacts()
         return self.contacts
 
+    def bsa(self):
+        self.bsa = self.
 
 
 

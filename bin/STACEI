@@ -5,9 +5,14 @@ def main():
     args, auto = stacei.cli.check_parse()
 
     pdb_obj = stacei.complex.TCRpMHCComplex(args.infile, verbose = True)
+
+    #perform annotation (VDJ, MHC allele, chain pairing)
     pdb_obj.annotate()
-    #pdb_obj.contacts()
-    #pdb_obj.save_contacts()
+
+    #calculate contacts and save as csv
+    pdb_obj.contacts()
+    pdb_obj.save_contacts()
+
     pdb_obj.bsa()
 
 

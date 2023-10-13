@@ -36,6 +36,9 @@ def _parse_args():
                                           "acceptors to be considered to make a salt bridge")
     parser.add_argument("--outdir", "-O", dest="outdir", required=False, type=str, default="",
                         help="Output directory, if not specified the output will be written to the name of the PDB")
+    parser.add_argument("--clean-up", "-Cu", dest="cleanup", action="store_true", help="Flag. If provided then clean"
+                        " up will occur after the script finishes (regardless of success or failure). This means the"
+                        "tmp folder will be deleted")
     args = parser.parse_args()
     return args
 
